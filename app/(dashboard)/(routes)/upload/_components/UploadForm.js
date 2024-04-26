@@ -1,7 +1,43 @@
 import React, { useState } from 'react'
+import AlertMsg from './AlertMsg';
+import FilePreview from './FilePreview';
+import ProgressBar from './ProgressBar';
+// import uploadBtnClick from '../page'
 
-const UploadForm = () => {
-  const [file ,setFile]=useState();
+
+const UploadForm = ({uploadBtnClick,progress}) => {
+  const [file ,setFile]=useState(null);
+  const [errorMsg,setErrorMsg]=useState();
+
+
+  const handleSubmit =()=>{
+    // if(file){
+    //   console.log(file)
+    // }
+  }
+
+  // function uploadBtnClick(file) {
+  //   // Function body to handle upload logic
+  //   console.log(file);
+  // }
+  
+
+   
+
+
+  const onFileSelect=(file)=>{
+
+    console.log(file);
+    if(file && file.size>2000000){
+
+      console.log("size is Greater than 2MB")
+      setErrorMsg('MAximum file upload size is 2 MB');
+      return ;
+    }
+    setErrorMsg(null)
+    setFile(file)
+
+  }
   return (
 
     <div className='text-center'>
@@ -16,17 +52,25 @@ const UploadForm = () => {
               Click to upload</span> 
               or 
               <strong className='text-primary'> drag</strong>  and <strong className='text-primary'>drop</strong>  </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX size : 2MB)</p>
         </div>
         <input id="dropzone-file" type="file" className="hidden" 
-        onChange={(event)=>setFile(event.target.files[0])}/>
+        onChange={(event)=>onFileSelect(event.target.files[0])}/>
     </label>
 </div> 
 
-<button disabled={!file} className='p-2 bg-primary text-white w-[30%]
-rounded-full mt-5 disabled:bg-gray-400' >upload</button>
+{errorMsg?<AlertMsg  msg={'Max File Size is 2 MB'}/>:null}
+{file?<FilePreview file={file} removeFile={()=>setFile(null)}/>:null}
+{/* <button onClick={handleSubmit} disabled={!file} className='p-2 bg-primary text-white w-[30%] rounded-full mt-5 disabled:bg-gray-400' >upload
+</button> */}
+ 
 
+{progress>0?<ProgressBar progress={progress}/>:<button   disabled={!file} className='p-2 bg-primary text-white w-[30%] rounded-full mt-5 disabled:bg-gray-400' 
+onClick={()=>uploadBtnClick(file)}>
+  upload
+</button>}
     </div>
+
   )
 }
 
