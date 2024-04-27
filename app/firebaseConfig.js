@@ -1,24 +1,24 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyA7w2ZQeBailJq4O5GnDbIG2Ocj1qe_Uzs",
-  authDomain: "file-sharing-app-764d8.firebaseapp.com",
-  projectId: "file-sharing-app-764d8",
-  storageBucket: "file-sharing-app-764d8.appspot.com",
-  messagingSenderId: "151046814287",
-  appId: "1:151046814287:web:bec601daa404c7074ac83a",
-  measurementId: "G-0QTEST70C7"
-};
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyA7w2ZQeBailJq4O5GnDbIG2Ocj1qe_Uzs",
+//   authDomain: "file-sharing-app-764d8.firebaseapp.com",
+//   projectId: "file-sharing-app-764d8",
+//   storageBucket: "file-sharing-app-764d8.appspot.com",
+//   messagingSenderId: "151046814287",
+//   appId: "1:151046814287:web:bec601daa404c7074ac83a",
+//   measurementId: "G-0QTEST70C7"
+// };
 
-//Initialize Firebase
- export const app = initializeApp(firebaseConfig);
-export  const analytics = getAnalytics(app);
+// //Initialize Firebase
+//  export const app = initializeApp(firebaseConfig);
+// export  const analytics = getAnalytics(app);
 
 
 
@@ -45,3 +45,31 @@ export  const analytics = getAnalytics(app);
 // // Initialize Firebase
 // export const app = initializeApp(firebaseConfig);
 // export const analytics = getAnalytics(app);
+
+
+
+
+//======================my file app [my web app]=========
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCFtjeXrGbVurZuOcInsToPIg2IHJVu8sg",
+  authDomain: "my-file-app-41268.firebaseapp.com",
+  projectId: "my-file-app-41268",
+  storageBucket: "my-file-app-41268.appspot.com",
+  messagingSenderId: "159717892151",
+  appId: "1:159717892151:web:52084529e10875097b1fb2",
+  measurementId: "G-FGG1D0ER1T"
+};
+
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
