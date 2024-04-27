@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { app } from "@/app/firebaseConfig";
 import Image from 'next/image';
 import file_img from '@/public/file_img.jpg'
-// import GlobalApi from '@/app/_utils/GlobalApi';
+import GlobalApi from '@/app/_utils/GlobalApi';
 import { useUser } from '@clerk/nextjs';
 
 const FilePreview = ({params}) => {
@@ -46,21 +46,21 @@ const FilePreview = ({params}) => {
 
     }
 
-    // const SendEmail=()=>{
+    const SendEmail=()=>{
 
-    //   const data={
-    //     emailToSend:email,
-    //     userName:user?.fullName,
-    //     fileName:file.fileName,
-    //     fileSize:file.fileSize,
-    //     fileType:file.fileType,
-    //     shortUrl:file.shortUrl
-    //   };
-    //   GlobalApi.SendEmail(data).then(resp=>{
-    //     console.log(resp);
-    //   });
+      const data={
+        emailToSend:email,
+        userName:user?.fullName,
+        fileName:file.fileName,
+        fileSize:file.fileSize,
+        fileType:file.fileType,
+        shortUrl:file.shortUrl
+      };
+      GlobalApi.SendEmail(data).then(resp=>{
+        console.log(resp);
+      });
 
-    // }
+    }
     
   return (
      <>
@@ -111,7 +111,7 @@ const FilePreview = ({params}) => {
                 </div>
 
                 <div>
-                  <button   className='bg-primary text-white w-full h-10 rounded-md font-bold hover:bg-blue-400' >Send Email</button>
+                  <button   className='bg-primary text-white w-full h-10 rounded-md font-bold hover:bg-blue-400' onClick={()=>SendEmail()} >Send Email</button>
                 </div>
 
               </div>
